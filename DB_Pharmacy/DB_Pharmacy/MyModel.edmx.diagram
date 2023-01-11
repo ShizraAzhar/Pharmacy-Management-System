@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b01f13fc72e74b6a890e798a1373751f" Name="Diagram1">
+        <EntityTypeShape EntityType="NEWModelEntity.tbl_employee" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWModelEntity.tbl_Item" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWModelEntity.tbl_patient" Width="1.5" PointX="1.875" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWModelEntity.tbl_plogin" Width="1.5" PointX="1.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NEWModelEntity.sysdiagram" Width="1.5" PointX="4.375" PointY="4.75" />
+        <AssociationConnector Association="NEWModelEntity.FK_tbl_plogin_tbl_employee" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

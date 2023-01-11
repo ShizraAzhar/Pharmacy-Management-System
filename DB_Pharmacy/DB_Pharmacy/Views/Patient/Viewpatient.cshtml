@@ -1,0 +1,48 @@
+﻿@model List<DB_Pharmacy.Models.PatientModel>
+@{
+    ViewBag.Title = "Viewpatient";
+}
+
+<h2>Viewpatient</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="content-panel">
+            <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#PID</th>
+                        <th>Patient Name</th>
+                        <th>Address</th>
+                        <th>Disease</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pat in Model)
+                    {
+                        <tr>
+                            <td>@pat.PID</td>
+                            <td>@pat.PName</td>
+                            <td>@pat.Paddress</td>
+                            <td>@pat.Diease</td>
+                            <td></td>
+                            <td><a href="@Url.Action("Editpatient", "Patient", new { PID =@pat.PID })"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@TempData["message"]");
+        }
+
+    </script>
+}

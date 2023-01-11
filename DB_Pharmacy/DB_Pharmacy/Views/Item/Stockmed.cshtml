@@ -1,0 +1,65 @@
+﻿@model List<DB_Pharmacy.Models.Itemmodel>
+@{
+    ViewBag.Title = "View Stock";
+    
+}
+
+<h2>View Stock</h2>
+
+<div class="content-panel">
+    <h3>Stocked Medicine</h3>
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>ItemCode</th>
+                <th>ItemName</th>
+                <th>ItemBrandName</th>
+                <th>ItemDescription</th>
+                <th>Unitprice</th>
+                <th>Sellprice</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Expiredate</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ItemCode</td>
+                    <td>@item.ItemName</td>
+                    <td>@item.ItemBrandName</td>
+                    <td>@item.ItemDescription</td>
+                    <td>@item.Unitprice</td>
+                    <td>@item.Sellprice</td>
+                    <td>@item.Unit</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Expiredate</td>
+                    <td><a href="@Url.Action("updatemed","Item", new { ItemID = @item.ItemID })"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="@Url.Action("deletemed", "Item" , new { ItemID = @item.ItemID })"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@TempData["message"]");
+        }
+
+    </script>
+}
+
+
+
+
+
+
+    
+
+
+
